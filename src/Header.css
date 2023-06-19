@@ -65,3 +65,12 @@
     flex-direction: column;
     
 }
+
+.header_optionbasket{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: 500;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}

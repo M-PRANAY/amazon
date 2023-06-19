@@ -3,7 +3,14 @@ import "./Header.css";
 import logo from "./amazon-logo.png";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
+import { ShoppingBasket } from "@mui/icons-material";
+import { useStateValue } from "./StateProvider";
+
+
 export default function Header() {
+
+	const[{basket},dispatch] = useStateValue();
+	
 	return (
 		<nav className="header">
 			{/* image logo */}
@@ -38,6 +45,14 @@ export default function Header() {
 					<div className="header_option">
 						<span>Your</span>
 						<span>Prime</span>
+					</div>
+				</Link>
+
+				{/* 4th link */}
+				<Link to="/checkout">
+					<div className="header_optionbasket">{/* basket icon */}
+					<ShoppingBasket />
+					<span>{basket?.length}</span>
 					</div>
 				</Link>
 			</div>
